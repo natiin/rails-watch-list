@@ -1,0 +1,27 @@
+
+<div class="container">
+  <%= link_to "all lists", lists_path, class: "btn btn-primary"%>
+  <%= link_to "add new bookmark", new_list_bookmark_path(@list)%>
+
+  <p>List: <%=@list.name%><p>
+
+  <% @list.bookmarks.each do |bookmark| %>
+
+
+  <div class="card" style="width: 18rem;">
+  <img src="<%= Movie.find(bookmark.movie_id).poster_url%>" class="card-img-top" alt="movie photo">
+  <div class="card-body">
+    <h5 class="card-title"><%= Movie.find(bookmark.movie_id).title%></h5>
+    <p class="card-text"><%= Movie.find(bookmark.movie_id).overview%></p>
+    <p class="card-text"><%= Movie.find(bookmark.movie_id).rating%></p>
+    <p class="card-text"><%= bookmark.comment%></p>
+    <%= link_to "Delete bookmark",
+            list_bookmark_path(bookmark),
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+  </div>
+</div>
+
+  <% end %>
+
+</div>

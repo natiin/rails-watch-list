@@ -1,0 +1,19 @@
+<div class="container m-5">
+
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),  url(<%= asset_path('imgs.jpg') %>);">
+    <div class="container">
+      <h1>Save movies</h1>
+      <%# <p>Photo by <a href="https://unsplash.com/@myke_simon?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Myke Simon</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a></p> %>
+    </div>
+  </div>
+
+
+  <div class="d-flex flex-wrap">
+      <% @lists.each do |list|%>
+        <div class="card-category m-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url(<%= asset_path('card.jpg') %>)">
+          <%= link_to list.name, list_path(list), class: "text-white"%>
+        </div>
+      <%end%>
+  </div>
+</div>

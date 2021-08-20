@@ -1,0 +1,16 @@
+
+<div class="container m-5">
+  <%= simple_form_for(@list) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs" style="width: 400px;">
+      <%= f.input :name %>
+    </div>
+
+    <div class="form-actions">
+    <button class ="btn btn-secondary m-3"> <%= f.button :submit %> </button>
+    </div>
+  <% end %>
+
+</div>
