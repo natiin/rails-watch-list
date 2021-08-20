@@ -53,3 +53,5 @@ gem 'simple_form'
 
 gem 'dotenv-rails', groups: %i[development test]
 gem 'pry-byebug'
+
+gem 'cloudinary', '~> 1.16.0'

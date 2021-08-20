@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :movies
 
   resources :lists do
-    resources :bookmarks
+    resources :bookmarks, only: %i[new create destroy]
   end
-  root_to :lists # index
+  # root_to :lists # index
 end
